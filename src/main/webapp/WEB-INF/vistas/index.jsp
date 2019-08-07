@@ -1,13 +1,57 @@
 <%@include file='../../includes/head.jsp'%>
 <body>
 	<%@include file='../../includes/header.jsp'%>
+	<nav>
+			<div class="navbar navbar-default navbar-custom">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">Administracion</a>
+					</div>
+					<ul class="nav navbar-nav">
+						<li><a href="#">Inicio</a></li>
+					</ul>
+					<ul class="nav navbar-nav">
+						<li><a href="#">Cargar Materias</a></li>
+					</ul>
+					<ul class="nav navbar-nav">
+						<li><a href="#">Ver Disponibles</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 	</header>
 	<div class="panel-group">
 		<div class="panel panel-default">
-			<div class="panel-heading">Quimica General I</div>
+			<div class="panel-heading">Bienvenido Nicolás, Materias
+				Aprobadas</div>
 			<div class="panel-body">
-				<a href="carga-elementos"><button class="btn btn-default">Cargar</button></a>
-					<%@include file='../../includes/errorMensaje.jsp'%>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Codigo</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Fecha Aprobaci&oacuten</th>
+							<th scope="col">A&ntildeo</th>
+							<th scope="col">Hs</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${materiasAprobadas}" var="materia">
+							<tr>
+								<td>${materia.codigo}</td>
+								<td>${materia.nombre}</td>
+								<td>${materia.fechaAprobacion}</td>
+								<td>${materia.anio}</td>
+								<td>${materia.cargaHoraria}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+
+				</table>
+
+				<h5>Cantidad de Materias Aprobadas: ${cantidadAprobadas }</h5>
+
+				<%@include file='../../includes/errorMensaje.jsp'%>
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,7 @@
 package ar.com.materias.modelo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -14,7 +15,9 @@ public class Materia {
 	private String nombre;
 	private Integer cargaHoraria;
 	private Integer anio;
+	private Date fechaAprobacion;
 	private Boolean aprobada;
+	private Long nroActa;
 	
 	@OneToMany(mappedBy="idCorrelativa")
 	private List<Correlativa> materia = new ArrayList<>();
@@ -22,7 +25,7 @@ public class Materia {
 	public Materia(){}
 
 	public Materia(Integer codigo, String nombre, Integer cargaHoraria, Integer anio, Boolean aprobada,
-			List<Correlativa> materia) {
+			List<Correlativa> materia, Date fechaAprobacion,Long nroActa) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -30,6 +33,24 @@ public class Materia {
 		this.anio = anio;
 		this.aprobada = aprobada;
 		this.materia = materia;
+		this.fechaAprobacion = fechaAprobacion;
+		this.nroActa = nroActa;
+	}
+	
+	public Long getNroActa() {
+		return nroActa;
+	}
+
+	public void setNroActa(Long nroActa) {
+		this.nroActa = nroActa;
+	}
+
+	public Date getFechaAprobacion() {
+		return fechaAprobacion;
+	}
+
+	public void setFechaAprobacion(Date fechaAprobacion) {
+		this.fechaAprobacion = fechaAprobacion;
 	}
 
 	public Integer getCodigo() {
