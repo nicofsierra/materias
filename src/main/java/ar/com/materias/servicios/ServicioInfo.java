@@ -8,4 +8,5 @@ public interface ServicioInfo {
 	
 	public List<Materia> buscarMateriasAprobadas();
 	public Long cantidadMateriasAprobadas();
+	public List<Materia> buscarTodasLasMaterias();
 }

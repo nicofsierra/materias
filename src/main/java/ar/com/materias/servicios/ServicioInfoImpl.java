@@ -26,6 +26,10 @@ public class ServicioInfoImpl implements ServicioInfo {
 	public Long cantidadMateriasAprobadas(){
 		return infoDao.cantidadMateriasAprobadas();
 	}
-
+	
+	@Override
+	public List<Materia> buscarTodasLasMaterias(){
+		return infoDao.buscarTodasLasMaterias();
+	}
 
 }

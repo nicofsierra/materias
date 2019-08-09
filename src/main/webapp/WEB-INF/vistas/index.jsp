@@ -11,7 +11,7 @@
 						<li><a href="#">Inicio</a></li>
 					</ul>
 					<ul class="nav navbar-nav">
-						<li><a href="#">Cargar Materias</a></li>
+						<li><a href="adm-materias">Marcar Aprobadas</a></li>
 					</ul>
 					<ul class="nav navbar-nav">
 						<li><a href="#">Ver Disponibles</a></li>

@@ -31,6 +31,15 @@ public class ControladorIndex {
 		return new ModelAndView("index",modelo);
 	}
 	
+	@RequestMapping("adm-materias")
+	public ModelAndView administrarMaterias(){
+		ModelMap modelo = new ModelMap();
+		
+		modelo.put("materias", servicioInfo.buscarTodasLasMaterias());
+		
+		return new ModelAndView("adm-materias",modelo);
+		
+	}
 	
 	
 	

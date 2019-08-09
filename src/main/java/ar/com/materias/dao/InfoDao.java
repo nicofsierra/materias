@@ -8,6 +8,6 @@ public interface InfoDao {
 	
 	public List<Materia> buscarMateriasAprobadas();
 	public Long cantidadMateriasAprobadas();
-
+	public List<Materia> buscarTodasLasMaterias();
 
 }

@@ -22,8 +22,8 @@ public class InfoDaoImpl implements InfoDao{
 	@Override
 	public List<Materia> buscarMateriasAprobadas(){
 		final Session session = sessionFactory.getCurrentSession();
-		return (List<Materia>) session.createCriteria(Materia.class).
-				add(Restrictions.eq("aprobada", true)).list();
+		return (List<Materia>) session.createCriteria(Materia.class)
+				.add(Restrictions.eq("aprobada", true)).list();
 	}
 	
 	@Override
@@ -33,6 +33,14 @@ public class InfoDaoImpl implements InfoDao{
 				.setProjection(Projections.count("codigo"))
 				.add(Restrictions.eq("aprobada", true)).uniqueResult();
 				
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Materia> buscarTodasLasMaterias(){
+		final Session session = sessionFactory.getCurrentSession();
+		return (List<Materia>) session.createCriteria(Materia.class)
+				.list();
 	}
 
 }
