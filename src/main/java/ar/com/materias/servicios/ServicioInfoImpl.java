@@ -31,5 +31,21 @@ public class ServicioInfoImpl implements ServicioInfo {
 	public List<Materia> buscarTodasLasMaterias(){
 		return infoDao.buscarTodasLasMaterias();
 	}
+	
+	@Override
+	public List<Materia> buscarMateriasPositivas(){
+		return infoDao.buscarMateriasPositivas();
+	}
+	
+	@Override
+	public Boolean actualizarAprobada(Materia materia){
+		return infoDao.actualizarAprobada(materia);
+	}
+	
+	@Override
+	public Materia buscarMateria(Integer codigo){
+		return infoDao.buscarMateria(codigo);
+	}
+
 
 }

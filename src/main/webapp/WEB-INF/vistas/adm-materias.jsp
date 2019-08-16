@@ -9,13 +9,16 @@
 				</div>
 				<ul class="nav navbar-nav">
 					<li><a href="index">Inicio</a></li>
-				</ul>
-				<ul class="nav navbar-nav">
-					<li><a href="#">Marcar Aprobadas</a></li>
-				</ul>
-				<ul class="nav navbar-nav">
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#">Administrar <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Marcar Aprobadas</a></li>
+							<li><a href="#">Materias que Curso</a></li>
+						</ul></li>
 					<li><a href="#">Ver Disponibles</a></li>
 				</ul>
+
 			</div>
 		</div>
 	</nav>
@@ -25,45 +28,31 @@
 			<div class="panel-heading">Bienvenido Nicolás, Administrar
 				Materias</div>
 			<div class="panel-body">
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">Codigo</th>
-							<th scope="col">Nombre</th>
-							<th scope="col">Fecha Aprobaci&oacuten</th>
-							<th scope="col">A&ntildeo</th>
-							<th scope="col">Hs</th>
-							<th scope="col">Aprobada</th>
-							<th scope="col">Cursando</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${materias}" var="materia">
-							<tr>
-								<td>${materia.codigo}</td>
-								<td>${materia.nombre}</td>
-								<td>${materia.fechaAprobacion}</td>
-								<td>${materia.anio}</td>
-								<td>${materia.cargaHoraria}</td>
-								<td><div class="form-check">
-										<c:if test="${materia.aprobada eq true}"> 
-										<input type="checkbox" class="form-check-input"
-											id="exampleCheck1" checked> </c:if>
-										<c:if test="${materia.aprobada eq false }">
-										<input type="checkbox" class="form-check-input"
-											id="exampleCheck1"> </c:if>
-									</div></td>
-								<td><div class="form-check">
-										<input type="checkbox" class="form-check-input"
-											id="exampleCheck2"> 
-									</div></td>	
-							</tr>
-						</c:forEach>
-					</tbody>
 
-				</table>
 
-				<h5>Cantidad de Materias Aprobadas: ${cantidadAprobadas }</h5>
+				<form action="actualizar-materias" method="GET">
+					<div class="form-group">
+						<label for="sel1">Materia:</label> <select class="form-control"
+							id="sel1" name="codigo">
+							<c:forEach items="${materias}" var="materia">
+								<option value="${materia.codigo}">${materia.nombre }</option>
+							</c:forEach>
+						</select>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio"
+							name="aprobada" id="inlineRadio1" value="1">
+						<label class="form-check-label" for="inlineRadio1">Aprobada</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio"
+							name="aprobada" id="inlineRadio2" value="0">
+						<label class="form-check-label" for="inlineRadio2">No Cursada/Desaprobada</label>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-primary" type="submit">Actualizar</button>
+					</div>
+				</form>
 
 				<%@include file='../../includes/errorMensaje.jsp'%>
 			</div>

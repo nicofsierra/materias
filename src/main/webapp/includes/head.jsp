@@ -25,5 +25,5 @@
 <link href="css/estilo.css" rel="stylesheet">
 <!-- Titulo -->
 <link rel='icon' href='img/logo.png' type='image/x-icon'>
-<title>Pymes</title>
+<title>Materias</title>
 </head>

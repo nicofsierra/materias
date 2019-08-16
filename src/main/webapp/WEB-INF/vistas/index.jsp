@@ -2,23 +2,25 @@
 <body>
 	<%@include file='../../includes/header.jsp'%>
 	<nav>
-			<div class="navbar navbar-default navbar-custom">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand" href="#">Administracion</a>
-					</div>
-					<ul class="nav navbar-nav">
-						<li><a href="#">Inicio</a></li>
-					</ul>
-					<ul class="nav navbar-nav">
-						<li><a href="adm-materias">Marcar Aprobadas</a></li>
-					</ul>
-					<ul class="nav navbar-nav">
-						<li><a href="#">Ver Disponibles</a></li>
-					</ul>
+		<div class="navbar navbar-default navbar-custom">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Administracion</a>
 				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="#">Inicio</a></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Administrar <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="adm-materias">Marcar Aprobadas</a></li>
+						<li><a href="#">Materias que Curso</a></li>
+					</ul></li>
+					<li><a href="#">Ver Disponibles</a></li>
+				</ul>
+				
 			</div>
-		</nav>
+		</div>
+	</nav>
 	</header>
 	<div class="panel-group">
 		<div class="panel panel-default">

@@ -18,6 +18,7 @@ public class Materia {
 	private Date fechaAprobacion;
 	private Boolean aprobada;
 	private Long nroActa;
+	private Boolean cursando;
 	
 	@OneToMany(mappedBy="idCorrelativa")
 	private List<Correlativa> materia = new ArrayList<>();
@@ -25,7 +26,7 @@ public class Materia {
 	public Materia(){}
 
 	public Materia(Integer codigo, String nombre, Integer cargaHoraria, Integer anio, Boolean aprobada,
-			List<Correlativa> materia, Date fechaAprobacion,Long nroActa) {
+			List<Correlativa> materia, Date fechaAprobacion,Long nroActa,Boolean cursando) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -35,8 +36,17 @@ public class Materia {
 		this.materia = materia;
 		this.fechaAprobacion = fechaAprobacion;
 		this.nroActa = nroActa;
+		this.cursando = cursando;
 	}
 	
+	public Boolean getCursando() {
+		return cursando;
+	}
+
+	public void setCursando(Boolean cursando) {
+		this.cursando = cursando;
+	}
+
 	public Long getNroActa() {
 		return nroActa;
 	}
